@@ -18,8 +18,6 @@ const Page = () => {
     };
 
     return (
-        // Main container with split screen
-
         <div className="flex flex-col md:flex-row h-screen">
             {/* Left side - White background with images - Hidden on mobile */}
             <div className="hidden md:flex w-1/2 bg-white flex-col relative">
@@ -48,15 +46,26 @@ const Page = () => {
                 </div>
             </div>
 
-            {/* Right side - Light grey background with login/signup */}
-            <div className="w-full md:w-1/2 bg-gray-50 flex-col  flex items-center justify-center border-l border-gray-200 border-s shadow-sm p-4">
-                <div className="w-full max-w-[680px]  bg-white  rounded-lg border border-gray-200 h-[34rem]">
-                    <Image src="/logo2.png" className="w-48 h-10 mx-auto mt-10 mb-10" alt="Logo" width={0} height={0} sizes="100vw" quality={100} priority />
-                    <h2 className="text-3xl px-10  font-inter-semibold text-center mb-10 ">
+            {/* Right side - adjust padding and centering for mobile */}
+            <div className="w-full md:w-1/2 bg-gray-50 flex-col flex items-center justify-center border-l border-gray-200 border-s shadow-sm p-4 min-h-screen">
+                <div className="w-full max-w-[680px] bg-white rounded-lg border border-gray-200 h-auto md:h-[34rem] px-4 md:px-0 my-auto">
+                    <Image 
+                        src="/logo2.png" 
+                        className="w-36 md:w-48 h-8 md:h-10 mx-auto mt-8 md:mt-10 mb-6 md:mb-10" 
+                        alt="Logo" 
+                        width={0} 
+                        height={0} 
+                        sizes="100vw" 
+                        quality={100} 
+                        priority 
+                    />
+                    
+                    <h2 className="text-2xl md:text-3xl px-4 md:px-10 font-inter-semibold text-center mb-6 md:mb-10">
                         {isLogin ? "Welcome to CodeAnt AI" : "Welcome to CodeAnt AI"}
                     </h2>
-                    <div className="px-10">
-                        <div className="grid grid-cols-2 mb-8 w-full rounded-lg border border-gray-200 bg-gray-50">
+
+                    <div className="px-4 md:px-10">
+                        <div className="grid grid-cols-2 mb-6 md:mb-8 w-full rounded-lg border border-gray-200 bg-gray-50">
                             <button
                                 className={`w-full py-3  rounded-lg ${isLogin ? "bg-[#1570EF]" : "bg-transparent"}`}
                                 onClick={() => setIsLogin(true)}
@@ -72,73 +81,66 @@ const Page = () => {
                         </div>
                     </div>
 
-                    <div className="space-y-6 border-t-2 border-gray-200 mb-10 px-32 pt-5">
-
-
+                    <div className="space-y-4 md:space-y-6 border-t-2 border-gray-200 mb-6 md:mb-10 px-4 md:px-32 pt-5">
                         {isLogin ? (
-                            // Login Form
-                            <div className="space-y-4">
-                                <div className="space-y-2">
-                                    <button 
-                                        onClick={handleSignIn}
-                                        className="w-full py-2 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2">
-                                        <GitHubLogoIcon className="w-5 h-5 mx-2" />
-                                        <Text className="font-inter-semibold">Sign in with Github</Text>
-                                    </button>
-                                </div>
-                                <div className="space-y-2">
-                                    <button 
-                                        onClick={handleSignIn}
-                                        className="w-full py-2 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2">
-                                        <FaBitbucket className="w-5 h-5 mx-2 text-blue-500" />
-                                        <Text className="font-inter-semibold">Sign in with Bitbucket</Text>
-                                    </button>
-                                </div>
-                                <div className="space-y-2">
-                                    <button 
-                                        onClick={handleSignIn}
-                                        className="w-full py-2 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2">
-                                        <VscAzureDevops className="w-5 h-5 mx-2 text-blue-700" />
-                                        <Text className="font-inter-semibold">Sign in with Azure DevOps</Text>
-                                    </button>
-                                </div>
-                                <div className="space-y-2">
-                                    <button 
-                                        onClick={handleSignIn}
-                                        className="w-full py-2 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2">
-                                        <FaGitlab className="w-5 h-5 mx-2 text-orange-500" />
-                                        <Text className="font-inter-semibold">Sign in with GitLab</Text>
-                                    </button>
-                                </div>
-                                
-                                
-                                
+                            <div className="space-y-3 md:space-y-4">
+                                <button 
+                                    onClick={handleSignIn}
+                                    className="w-full py-2.5 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2"
+                                >
+                                    <GitHubLogoIcon className="w-4 md:w-5 h-4 md:h-5 mx-2" />
+                                    <Text className="font-inter-semibold text-sm md:text-base">Sign in with Github</Text>
+                                </button>
 
+                                <button 
+                                    onClick={handleSignIn}
+                                    className="w-full py-2.5 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2"
+                                >
+                                    <FaBitbucket className="w-4 md:w-5 h-4 md:h-5 mx-2 text-blue-500" />
+                                    <Text className="font-inter-semibold text-sm md:text-base">Sign in with Bitbucket</Text>
+                                </button>
+
+                                <button 
+                                    onClick={handleSignIn}
+                                    className="w-full py-2.5 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2"
+                                >
+                                    <VscAzureDevops className="w-4 md:w-5 h-4 md:h-5 mx-2 text-blue-700" />
+                                    <Text className="font-inter-semibold text-sm md:text-base">Sign in with Azure DevOps</Text>
+                                </button>
+
+                                <button 
+                                    onClick={handleSignIn}
+                                    className="w-full py-2.5 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2"
+                                >
+                                    <FaGitlab className="w-4 md:w-5 h-4 md:h-5 mx-2 text-orange-500" />
+                                    <Text className="font-inter-semibold text-sm md:text-base">Sign in with GitLab</Text>
+                                </button>
                             </div>
                         ) : (
-                            // Signup Form
-                            <div className="space-y-4">
-                                <div className="space-y-2">
-                                    <button 
-                                        onClick={handleSignIn}
-                                        className="w-full py-2 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2">
-                                        <FaGitlab className="w-5 h-5 mx-2 text-orange-500" />
-                                        <Text className="font-inter-semibold">Self Hosted GitLab</Text>
-                                    </button>
-                                </div>
-                                <div className="space-y-2">
-                                    <button 
-                                        onClick={handleSignIn}
-                                        className="w-full py-2 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2">
-                                        <VscKey className="w-5 h-5 mx-2" />
-                                        <Text className="font-inter-semibold">Sign in with SSO</Text>
-                                    </button>
-                                </div>
+                            <div className="space-y-3 md:space-y-4">
+                                <button 
+                                    onClick={handleSignIn}
+                                    className="w-full py-2.5 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2"
+                                >
+                                    <FaGitlab className="w-4 md:w-5 h-4 md:h-5 mx-2 text-orange-500" />
+                                    <Text className="font-inter-semibold text-sm md:text-base">Self Hosted GitLab</Text>
+                                </button>
+
+                                <button 
+                                    onClick={handleSignIn}
+                                    className="w-full py-2.5 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2"
+                                >
+                                    <VscKey className="w-4 md:w-5 h-4 md:h-5 mx-2" />
+                                    <Text className="font-inter-semibold text-sm md:text-base">Sign in with SSO</Text>
+                                </button>
                             </div>
                         )}
                     </div>
                 </div>
-                <Text className="text-center mt-6 text-black text-sm font-inter-regular">By signing up, you agree to our <b className="font-inter-bold">Privacy Policy.</b></Text>
+
+                <Text className="text-center mt-4 md:mt-6 text-black text-xs md:text-sm font-inter-regular px-4">
+                    By signing up, you agree to our <b className="font-inter-bold">Privacy Policy.</b>
+                </Text>
             </div>
         </div>
     );
