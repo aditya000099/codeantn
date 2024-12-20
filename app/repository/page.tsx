@@ -168,11 +168,11 @@ const UserDropdown = () => {
 // Add sample components for each tab
 const TabComponents = {
     repositories: () => (
-        <div className="bg-white rounded-lg border p-0">
-            <div className="p-6 pb-4">
+        <div className="bg-white border-x-0 md:border-x md:rounded-lg border-y">
+            <div className="p-4 md:p-6 pb-4">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
                     <div className="flex items-center gap-4">
-                        <h1 className="text-2xl font-bold">Repositories</h1>
+                        <h1 className="text-xl md:text-2xl font-bold">Repositories</h1>
                         <span className="bg-gray-100 px-2 py-1 rounded-full text-sm">
                             {mockRepos.length}
                         </span>
@@ -205,15 +205,15 @@ const TabComponents = {
                 {mockRepos.map((repo) => (
                     <div
                         key={repo.id}
-                        className="px-6 py-4 hover:bg-gray-50 w-full"
+                        className="px-4 md:px-6 py-4 hover:bg-gray-50 w-full"
                     >
                         <div className="flex items-center gap-2 mb-2">
-                            <div className="font-medium text-blue-600">{repo.name}</div>
+                            <div className="font-medium text-blue-600 text-sm md:text-base">{repo.name}</div>
                             <span className="text-xs px-2 py-0.5 rounded-full border border-blue-200 bg-blue-50 text-blue-700">
                                 {repo.isPrivate ? 'Private' : 'Public'}
                             </span>
                         </div>
-                        <div className="text-sm text-gray-900 flex items-center gap-8 w-full">
+                        <div className="text-xs md:text-sm text-gray-900 flex flex-wrap items-center gap-x-4 gap-y-2 w-full">
                             <span className="flex items-center whitespace-nowrap">
                                 {repo.language}
                                 <span className="w-2 h-2 bg-blue-600 rounded-full ml-2"></span>
@@ -420,9 +420,10 @@ const RepositoryPage = () => {
             <Sidebar />
             <MobileHeader />
 
-            {/* Scrollable Content Area */}
+            {/* Scrollable Content Area - removed horizontal padding on mobile */}
             <div className={cn(
-                "flex-1 p-4 md:p-6 overflow-auto",
+                "flex-1 overflow-auto",
+                "md:p-6", // Padding only on desktop
                 "md:ml-60", // Desktop margin for sidebar
                 "mt-16 md:mt-0" // Mobile margin for header
             )}>
