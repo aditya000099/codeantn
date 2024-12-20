@@ -7,11 +7,15 @@ import Image from "next/image";
 import { useState } from "react";
 import { FaGitlab } from "react-icons/fa";
 import { VscKey } from "react-icons/vsc";
-
-
+import { useRouter } from "next/navigation";
 
 const Page = () => {
     const [isLogin, setIsLogin] = useState(true);
+    const router = useRouter();
+
+    const handleSignIn = () => {
+        router.push('/repository');
+    };
 
     return (
         // Main container with split screen
@@ -75,26 +79,34 @@ const Page = () => {
                             // Login Form
                             <div className="space-y-4">
                                 <div className="space-y-2">
-                                    <button className="w-full py-2 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2">
+                                    <button 
+                                        onClick={handleSignIn}
+                                        className="w-full py-2 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2">
                                         <GitHubLogoIcon className="w-5 h-5 mx-2" />
                                         <Text className="font-inter-semibold">Sign in with Github</Text>
                                     </button>
                                 </div>
                                 <div className="space-y-2">
-                                    <button className="w-full py-2 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2">
+                                    <button 
+                                        onClick={handleSignIn}
+                                        className="w-full py-2 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2">
                                         <FaBitbucket className="w-5 h-5 mx-2 text-blue-500" />
                                         <Text className="font-inter-semibold">Sign in with Bitbucket</Text>
                                     </button>
                                 </div>
                                 <div className="space-y-2">
-                                    <button className="w-full py-2 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2">
-                                    <VscAzureDevops className="w-5 h-5 mx-2 text-blue-700" />
+                                    <button 
+                                        onClick={handleSignIn}
+                                        className="w-full py-2 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2">
+                                        <VscAzureDevops className="w-5 h-5 mx-2 text-blue-700" />
                                         <Text className="font-inter-semibold">Sign in with Azure DevOps</Text>
                                     </button>
                                 </div>
                                 <div className="space-y-2">
-                                    <button className="w-full py-2 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2">
-                                    <FaGitlab className="w-5 h-5 mx-2 text-orange-500" />
+                                    <button 
+                                        onClick={handleSignIn}
+                                        className="w-full py-2 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2">
+                                        <FaGitlab className="w-5 h-5 mx-2 text-orange-500" />
                                         <Text className="font-inter-semibold">Sign in with GitLab</Text>
                                     </button>
                                 </div>
@@ -107,14 +119,18 @@ const Page = () => {
                             // Signup Form
                             <div className="space-y-4">
                                 <div className="space-y-2">
-                                    <button className="w-full py-2 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2">
-                                    <FaGitlab className="w-5 h-5 mx-2 text-orange-500" />
+                                    <button 
+                                        onClick={handleSignIn}
+                                        className="w-full py-2 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2">
+                                        <FaGitlab className="w-5 h-5 mx-2 text-orange-500" />
                                         <Text className="font-inter-semibold">Self Hosted GitLab</Text>
                                     </button>
                                 </div>
                                 <div className="space-y-2">
-                                    <button className="w-full py-2 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2">
-                                    <VscKey className="w-5 h-5 mx-2" />
+                                    <button 
+                                        onClick={handleSignIn}
+                                        className="w-full py-2 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2">
+                                        <VscKey className="w-5 h-5 mx-2" />
                                         <Text className="font-inter-semibold">Sign in with SSO</Text>
                                     </button>
                                 </div>
