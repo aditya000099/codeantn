@@ -139,6 +139,75 @@ const Page = () => {
                             )}
                         </div>
                     </div>
+<<<<<<< HEAD
+=======
+
+                    <div className="space-y-6 border-t-2 border-gray-200 mb-10 px-32 pt-5">
+
+
+                        {isLogin ? (
+                            // Login Form
+                            <div className="space-y-4">
+                                <div className="space-y-2">
+                                    <button 
+                                        onClick={handleSignIn}
+                                        className="w-full py-2 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2">
+                                        <GitHubLogoIcon className="w-5 h-5 mx-2" />
+                                        <Text className="font-inter-semibold">Sign in with Github</Text>
+                                    </button>
+                                </div>
+                                <div className="space-y-2">
+                                    <button 
+                                        onClick={handleSignIn}
+                                        className="w-full py-2 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2">
+                                        <FaBitbucket className="w-5 h-5 mx-2 text-blue-500" />
+                                        <Text className="font-inter-semibold">Sign in with Bitbucket</Text>
+                                    </button>
+                                </div>
+                                <div className="space-y-2">
+                                    <button 
+                                        onClick={handleSignIn}
+                                        className="w-full py-2 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2">
+                                        <VscAzureDevops className="w-5 h-5 mx-2 text-blue-700" />
+                                        <Text className="font-inter-semibold">Sign in with Azure DevOps</Text>
+                                    </button>
+                                </div>
+                                <div className="space-y-2">
+                                    <button 
+                                        onClick={handleSignIn}
+                                        className="w-full py-2 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2">
+                                        <FaGitlab className="w-5 h-5 mx-2 text-orange-500" />
+                                        <Text className="font-inter-semibold">Sign in with GitLab</Text>
+                                    </button>
+                                </div>
+                                
+                                
+                                
+
+                            </div>
+                        ) : (
+                            // Signup Form
+                            <div className="space-y-4">
+                                <div className="space-y-2">
+                                    <button 
+                                        onClick={handleSignIn}
+                                        className="w-full py-2 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2">
+                                        <FaGitlab className="w-5 h-5 mx-2 text-orange-500" />
+                                        <Text className="font-inter-semibold">Self Hosted GitLab</Text>
+                                    </button>
+                                </div>
+                                <div className="space-y-2">
+                                    <button 
+                                        onClick={handleSignIn}
+                                        className="w-full py-2 rounded-lg border shadow-sm border-gray-200 flex items-center justify-center gap-2">
+                                        <VscKey className="w-5 h-5 mx-2" />
+                                        <Text className="font-inter-semibold">Sign in with SSO</Text>
+                                    </button>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+>>>>>>> dad9112 (fix)
                 </div>
 
                 {/* Policy text - moved closer to the box */}
