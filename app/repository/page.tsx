@@ -169,12 +169,17 @@ const UserDropdown = () => {
 const TabComponents = {
     repositories: () => (
 <<<<<<< HEAD
+<<<<<<< HEAD
         <div className="bg-white border-x-0 md:border-x md:rounded-lg border-y">
             <div className="p-4 md:p-6 pb-4">
 =======
         <div className="bg-white rounded-lg border p-0">
             <div className="p-6 pb-4">
 >>>>>>> ea4e780 (res)
+=======
+        <div className="bg-white border-x-0 md:border-x md:rounded-lg border-y">
+            <div className="p-4 md:p-6 pb-4">
+>>>>>>> 3a5a2d7 (ah)
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
                     <div className="flex items-center gap-4">
                         <h1 className="text-xl md:text-2xl font-bold">Repositories</h1>
@@ -426,6 +431,7 @@ const RepositoryPage = () => {
             <MobileHeader />
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             {/* Scrollable Content Area - removed horizontal padding on mobile */}
             <div className={cn(
                 "flex-1 overflow-auto",
@@ -435,6 +441,12 @@ const RepositoryPage = () => {
             <div className={cn(
                 "flex-1 p-4 md:p-6 overflow-auto",
 >>>>>>> ea4e780 (res)
+=======
+            {/* Scrollable Content Area - removed horizontal padding on mobile */}
+            <div className={cn(
+                "flex-1 overflow-auto",
+                "md:p-6", // Padding only on desktop
+>>>>>>> 3a5a2d7 (ah)
                 "md:ml-60", // Desktop margin for sidebar
                 "mt-16 md:mt-0" // Mobile margin for header
             )}>
